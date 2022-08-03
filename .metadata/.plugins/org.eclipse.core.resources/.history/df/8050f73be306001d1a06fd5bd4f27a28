@@ -1,0 +1,12 @@
+package com.RunnerClass;
+
+public class PojoB {
+public static void main(String[] args) {
+	PojoA data = new PojoA();
+	int a = data.getA();
+	data.setA(7);
+	System.out.println(a);
+	int a2 = data.getA();
+	System.out.println(a2);
+}
+}

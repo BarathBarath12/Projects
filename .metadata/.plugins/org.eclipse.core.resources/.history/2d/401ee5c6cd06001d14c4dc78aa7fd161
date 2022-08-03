@@ -1,0 +1,21 @@
+package com.RunnerClass;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class RunnerClass extends UtilityFiles {
+
+	public static WebDriver driver;
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		create_Browser("chrome");
+		openUrl("https://adactinhotelapp.com/");
+		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
+		userdata(username, "Barath");
+		clear(username);
+	}
+
+}

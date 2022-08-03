@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="date" value="10/08/2022"/>
+    <parameter name="init" value="K"/>
+    <parameter name="cvv" value="123"/>
+    <parameter name="address" value="8/2 vekkraki adact"/>
+    <parameter name="pass" value="Barath@12"/>
+    <parameter name="year" value="2022"/>
+    <parameter name="name" value="Barath"/>
+    <parameter name="cardno" value="1383898389828282"/>
+    <parameter name="lastdate" value="10/10/2022"/>
+    <parameter name="username" value="BarathBarath"/>
+    <classes>
+      <class name="com.RunnerClass.RunnerClass2">
+        <methods>
+          <include name="book" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.RunnerClass.RunnerClass2 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

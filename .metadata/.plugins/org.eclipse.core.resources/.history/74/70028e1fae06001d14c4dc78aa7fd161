@@ -1,0 +1,14 @@
+package com.selenium;
+
+import org.checkerframework.checker.units.qual.m2;
+
+public class A {
+private void m1(String name) {
+	// TODO Auto-generated method stub
+
+}
+private void m2(String name) {
+	// TODO Auto-generated method stub
+
+}
+}

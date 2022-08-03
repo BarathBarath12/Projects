@@ -1,0 +1,63 @@
+package com.runnerclass;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Purchase_Dress {
+	public static WebDriver driver;
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\barat\\eclipse-workspace-3\\Atomation_Project\\Drive\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.get("http://automationpractice.com/index.php");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		Actions a = new Actions(driver);
+		WebElement dresses = driver.findElement(
+				By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::li[10]/a"));
+		a.moveToElement(dresses).perform();
+		WebElement casualDresses = driver.findElement(
+				By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::li[11]/a"));
+		a.moveToElement(casualDresses).perform();
+		a.click(casualDresses).perform();
+		Thread.sleep(1000);
+		WebElement size = driver.findElement(By.xpath(
+				"//ul[@id='ul_layered_id_attribute_group_1']/descendant::li/div/span/input[@name='layered_id_attribute_group_1']"));
+		size.click();
+		WebElement cotton = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_id_feature_5']/descendant::li/div/span/input"));
+		cotton.click();
+		WebElement style = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_id_feature_6']/descendant::li/div/span/input"));
+		style.click();
+		WebElement properties = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_id_feature_7']/descendant::li/div/span/input"));
+		properties.click();
+		WebElement availability = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_quantity_0']/descendant::li/div/span/input"));
+		availability.click();
+		WebElement manufactor = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_manufacturer_0']/descendant::li/div/span/input"));
+		manufactor.click();
+		WebElement condition = driver
+				.findElement(By.xpath("//ul[@id='ul_layered_condition_0']/descendant::li/div/span/input"));
+		condition.click();
+		Thread.sleep(1000);
+		WebElement printDress = driver.findElement(By.xpath("//img[@title='Printed Dress']"));
+		a.moveToElement(printDress).perform();
+		WebElement quickView = driver.findElement(By.xpath("//span[text()='Quick view']"));
+		quickView.click();
+		WebElement addtocard = driver.findElement(By.xpath("//p[@id='add_to_cart']/child::button/span"));
+		addtocard.click();
+		driver.findElement(By.xpath("//a[@class = 'btn btn-default button button-medium']/span"));
+	}
+
+}

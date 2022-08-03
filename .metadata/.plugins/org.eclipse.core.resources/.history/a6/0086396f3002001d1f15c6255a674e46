@@ -1,0 +1,10 @@
+package com.selenium;
+
+public class Keyboard_Action1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

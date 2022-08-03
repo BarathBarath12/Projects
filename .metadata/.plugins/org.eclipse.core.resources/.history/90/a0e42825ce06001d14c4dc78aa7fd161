@@ -1,0 +1,42 @@
+package com.RunnerClass;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+public class UtilityFiles {
+
+	public static WebDriver driver;
+
+	public static WebDriver create_Browser(String name) {
+		if (name.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Drive\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (name.equalsIgnoreCase("edge")) {
+			System.setProperty("driver.edge.driver", System.getProperty("user.dir") + "Drive\\msedgedriver.exe");
+			driver = new EdgeDriver();
+		}
+		driver.manage().window().maximize();
+		return driver;
+
+	}
+
+	public static void openUrl(String url) throws InterruptedException {
+		driver.get(url);
+		Thread.sleep(1000);
+
+	}
+
+
+	public static void userdata(WebElement e, String name) {
+		e.clear();
+		e.sendKeys(name);
+	}
+
+	public static void userpassword(WebElement ele, String value) {
+		ele.sendKeys(value);
+	}
+
+	public static void login(WebElement els) {
+		els.click();
+	}
+}
